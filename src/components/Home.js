@@ -1,19 +1,9 @@
-import { React, useState, useCallback } from 'react'
-import axios from "axios";
+import React from 'react'
 import styled from "styled-components";
 import { BsClipboard, BsClipboardCheck } from "react-icons/bs"
+import useFetch from "./CustomHook";
 function Home() {
-    const [copy, setcopy] = useState(false);
-    const [advice, setAdvice] = useState("");
-
-
-    const fetchAdvice = useCallback(async () => {
-        setcopy(false);
-        const response = await axios.get('https://api.adviceslip.com/advice');
-        setAdvice(response.data.slip.advice)
-    })
-
-
+    const [copy, setcopy, advice, setAdvice, fetchAdvice] = useFetch();
     return (
         <Wrapper>
             <div className="container">

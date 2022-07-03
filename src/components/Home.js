@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsClipboard, BsClipboardCheck } from "react-icons/bs"
 import useFetch from "./CustomHook";
 function Home() {
+    const [copy, setcopy, advice, fetchAdvice] = useFetch();
     const [copy, setcopy, advice, setAdvice, fetchAdvice] = useFetch();
     return (
         <Wrapper>
